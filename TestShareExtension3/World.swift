@@ -7,7 +7,7 @@
 //
 
 struct World {
-    var storage = UserDefaultStorage()
+    var storage = RealmStorage()
 }
 
 let Current = World()
