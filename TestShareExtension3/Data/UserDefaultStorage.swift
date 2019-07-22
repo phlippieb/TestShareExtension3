@@ -9,7 +9,7 @@
 import Foundation
 
 final class UserDefaultStorage {
-    private lazy var userDefaults = UserDefaults.standard
+    private lazy var userDefaults = UserDefaults(suiteName: "group.tse3")!
     private lazy var notesKey = "Notes"
     private lazy var encoder = JSONEncoder()
     private lazy var decoder = JSONDecoder()
@@ -28,6 +28,7 @@ extension UserDefaultStorage: StorageProtocol {
         let data = value as? Data,
         let decoded = try? self.decoder.decode(Array<Note>.self, from: data)
             else { return [] }
+        
         
         return decoded
     }

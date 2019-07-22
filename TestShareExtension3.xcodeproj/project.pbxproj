@@ -20,6 +20,10 @@
 		0A2326EA22E5FD0E00B3C86C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2326E822E5FD0E00B3C86C /* MainInterface.storyboard */; };
 		0A2326EE22E5FD0E00B3C86C /* Test Share 3.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A2326E422E5FD0E00B3C86C /* Test Share 3.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A2326F422E5FD6D00B3C86C /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2326F322E5FD6D00B3C86C /* UserDefaultStorage.swift */; };
+		0A2326F522E6004F00B3C86C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2326D822E5F9C100B3C86C /* Note.swift */; };
+		0A2326F622E6018500B3C86C /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2326DE22E5FA8300B3C86C /* World.swift */; };
+		0A2326F722E6018B00B3C86C /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2326F322E5FD6D00B3C86C /* UserDefaultStorage.swift */; };
+		0A2326F822E6019100B3C86C /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2326DA22E5F9FB00B3C86C /* StorageProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,8 @@
 		0A2326E922E5FD0E00B3C86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		0A2326EB22E5FD0E00B3C86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A2326F322E5FD6D00B3C86C /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
+		0A2326F922E601CA00B3C86C /* TestShareExtension3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestShareExtension3.entitlements; sourceTree = "<group>"; };
+		0A2326FA22E601EA00B3C86C /* Test Share 3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Test Share 3.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		0A2326C222E5F91A00B3C86C /* TestShareExtension3 */ = {
 			isa = PBXGroup;
 			children = (
+				0A2326F922E601CA00B3C86C /* TestShareExtension3.entitlements */,
 				0A2326C322E5F91A00B3C86C /* AppDelegate.swift */,
 				0A2326CA22E5F91B00B3C86C /* Assets.xcassets */,
 				0A2326D522E5F97500B3C86C /* Data */,
@@ -146,6 +153,7 @@
 		0A2326E522E5FD0E00B3C86C /* Test Share 3 */ = {
 			isa = PBXGroup;
 			children = (
+				0A2326FA22E601EA00B3C86C /* Test Share 3.entitlements */,
 				0A2326E622E5FD0E00B3C86C /* ShareViewController.swift */,
 				0A2326E822E5FD0E00B3C86C /* MainInterface.storyboard */,
 				0A2326EB22E5FD0E00B3C86C /* Info.plist */,
@@ -204,9 +212,19 @@
 				TargetAttributes = {
 					0A2326BF22E5F91A00B3C86C = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0A2326E322E5FD0E00B3C86C = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -269,7 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2326F722E6018B00B3C86C /* UserDefaultStorage.swift in Sources */,
+				0A2326F622E6018500B3C86C /* World.swift in Sources */,
+				0A2326F822E6019100B3C86C /* StorageProtocol.swift in Sources */,
 				0A2326E722E5FD0E00B3C86C /* ShareViewController.swift in Sources */,
+				0A2326F522E6004F00B3C86C /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +454,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TestShareExtension3/TestShareExtension3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NDH97745WS;
 				INFOPLIST_FILE = TestShareExtension3/Info.plist;
@@ -451,6 +474,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TestShareExtension3/TestShareExtension3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NDH97745WS;
 				INFOPLIST_FILE = TestShareExtension3/Info.plist;
@@ -468,6 +492,7 @@
 		0A2326F022E5FD0E00B3C86C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Test Share 3/Test Share 3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NDH97745WS;
 				INFOPLIST_FILE = "Test Share 3/Info.plist";
@@ -487,6 +512,7 @@
 		0A2326F122E5FD0E00B3C86C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Test Share 3/Test Share 3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NDH97745WS;
 				INFOPLIST_FILE = "Test Share 3/Info.plist";
