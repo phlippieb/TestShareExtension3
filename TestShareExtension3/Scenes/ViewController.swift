@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         self.tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: self.view.safeAreaInsets.bottom).isActive = true
+        
     }
     
     private lazy var tableView: UITableView = {

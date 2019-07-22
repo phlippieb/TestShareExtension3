@@ -9,3 +9,5 @@
 struct Note {
     var text: String
 }
+
+extension Note: Codable {}
