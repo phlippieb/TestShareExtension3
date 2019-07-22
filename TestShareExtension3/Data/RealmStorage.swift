@@ -19,7 +19,7 @@ final class RealmNote: Object {
 
 extension RealmStorage: StorageProtocol {
     func store(note: Note) {
-        let realm = try! Realm()
+        let realm = RealmService.shared.getRealm()
         let realmNote = RealmNote()
         realmNote.text = note.text
         realm.beginWrite()
@@ -28,9 +28,27 @@ extension RealmStorage: StorageProtocol {
     }
     
     func fetch() -> [Note] {
-        let realm = try! Realm()
+        let realm = RealmService.shared.getRealm()
         let realmNotes = realm.objects(RealmNote.self)
         let notes = realmNotes.map { Note(text: $0.text) }
         return Array(notes)
     }
+}
+
+final class RealmService {
+    static let shared = RealmService()
+    
+    func getRealm() -> Realm {
+        return try! Realm(configuration: self.config)
+    }
+    
+    private lazy var config: Realm.Configuration = {
+        return Realm.Configuration(fileURL: self.realmFileUrl)
+    }()
+    
+    private lazy var realmFileUrl: URL = {
+        return FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: "group.tse3")!
+            .appendingPathComponent("default.realm")
+    }()
 }
